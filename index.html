@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mong Phan - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+</head>
+
+<body class="bg-white">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-['Pacifico'] text-primary">Mong P.</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+        <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+        <a href="#experience" class="text-gray-700 hover:text-primary font-medium transition-colors">Experience</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+      </div>
+      <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+        <i class="ri-menu-line ri-lg"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+      <div class="container mx-auto px-6 py-2 flex flex-col space-y-4">
+        <a href="#home" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Home</a>
+        <a href="#projects" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Projects</a>
+        <a href="#experience" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Experience</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24"
+    style="background-image: url('./img/bg_img.jpg'); background-size: cover; background-position: center;">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center w-full">
+        <div class="md:w-1/2 text-justify">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Mong Phan
+          </h1>
+          <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
+            Electronics & Embedded Engineer
+          </h2>
+          <p class="text-gray-600 mb-8">
+            I’m an Electronics and Embedded IoT Engineer with a strong academic background and over 10 years of hands-on
+            experience in electronics design, including analog and digital PCB development. My core strengths include
+            embedded programming, system integration, and building complete IoT and robotic solutions.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#projects"
+              class="px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap">View
+              Projects</a>
+            <a href="#contact"
+              class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap">Contact
+              Me</a>
+          </div>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
+          <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <div class="absolute inset-0 bg-primary/10 rounded-full -rotate-6"></div>
+            <img src="./img/hinh_CV.png" alt="Mong Phan"
+              class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-white shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Tech Stack -->
+  <section class="py-16" style="background-color: #ffffff;">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+        My Tech Stack
+      </h2>
+      <div
+        style="background-image: url('./img/tech_stack.png'); background-size:auto; background-position: center; background-repeat: no-repeat; min-height: 300px; border-radius: 8px; padding: 20px;">
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+
+  <section class="py-16" style="background-color: #ffffff;">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Technical Skills</h2>
+
+      <!-- Tabs -->
+      <div class="flex justify-center space-x-20 mb-6" id="tab-buttons">
+        <button
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          data-tab="0">PCB Design</button>
+        <button
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          data-tab="1">Embedded System Development</button>
+        <button
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          data-tab="2">Robot Framework</button>
+        <button
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          data-tab="3">Version Control & CI/CD</button>
+        <button
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          data-tab="4">Hardware Assembly & Soldering</button>
+      </div>
+
+      <div class="mt-16"> </div>
+
+      <!-- Tab Contents -->
+      <div id="tab-contents" class="relative w-full">
+        <!-- Content blocks -->
+        <div class="tab-content flex items-start space-x-8" data-tab="0">
+          <img src="./img/PCB.png" alt="PCB Design" class="w-1/3 rounded shadow">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">PCB Design</h3>
+            <ul class="list-disc list-inside">
+              <li>Experience with schematic capture, PCB layout, and circuit simulation using tools such as EasyEDA,
+                KiCad, Proteus, and LTspice.</li>
+              <li>Skilled in both low- and high-voltage electronics, power electronics, and analog/digital system
+                design.</li>
+              <li>Knowledgeable in signal integrity and EMI mitigation practices such as controlled impedance routing,
+                ground planes, and decoupling strategies. </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content hidden flex items-start space-x-8" data-tab="1">
+          <img src="./img/iot_board01.png" alt="Embedded System Development" class="w-1/3 rounded shadow">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Embedded System Development</h3>
+            <ul class="list-disc list-inside">
+              <li>Proficient in embedded system design and development, with experience delivering end-to-end solutions
+                using a variety of microcontrollers, including RP2040, ESP32, STM32, Arduino-based boards, AVR, and
+                Raspberry Pi.</li>
+              <li>Skilled in bare-metal programming, FreeRTOS-based development, and system integration.</li>
+              <li>Experienced in Embedded Linux development, including kernel customization using the Yocto
+                Project. </li>
+              <li>Familiar with peripheral interfacing (SPI, I2C, UART, Modbus), low-power design, real-time
+                constraints, and driver development.</li>
+              <li>Hands-on experience with wireless communication technologies such as Wi-Fi, Bluetooth, and LoRa for
+                IoT and embedded applications.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content hidden flex items-start space-x-8" data-tab="2">
+          <img src="./img/robot_framework.png" alt="Robot Framework" class="w-1/3 rounded shadow">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Robot Framework</h3>
+            <ul class="list-disc list-inside">
+              <li>Experienced in using Robot Framework for automated testing of embedded systems, APIs, and software
+                applications.</li>
+              <li>Proficient in writing readable and maintainable test cases using keyword-driven and data-driven
+                approaches.</li>
+              <li>Familiar with test suite organization, custom keyword creation using Python, and CI/CD integration for
+                automated test execution and reporting using Jenkins and GitLab.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content hidden flex items-start space-x-8" data-tab="3">
+          <img src="./img/version_control.png" alt="Version Control & CI/CD" class="w-1/3 rounded shadow">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Version Control & CI/CD</h3>
+            <ul class="list-disc list-inside">
+              <li><strong>Git</strong>: Branching, merging, rebasing, conflict resolution, tagging, stash.
+              </li>
+              <li><strong>GitLab CI/CD</strong>: Pipeline and job configuration, multi-stage pipelines, parallel jobs.
+              </li>
+              <li><strong>Automation</strong>: Automated build, test, and deployment workflows</li>
+              <li><strong>Environment Management</strong>: Use of variables, secrets, and caching in pipelines</li>
+              <li><strong>Monitoring & Debugging</strong>: Pipeline logs analysis, job failure handling, pipeline
+                optimization
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content hidden flex items-start space-x-8" data-tab="4">
+          <img src="./img/soldering.png" alt="Hardware Assembly & Soldering" class="w-1/3 rounded shadow">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Hardware Assembly & Soldering</h3>
+            <ul class="list-disc list-inside">
+              <li>Proficient in soldering and hardware assembly, including both through-hole and SMD components. </li>
+              <li>Experienced in using soldering stations and hot air rework stations for prototyping, repair, and
+                modification of custom PCBs.</li>
+              <li>Skilled in fine-pitch soldering and BGA rework using microscope-guided techniques.</li>
+              <li>Familiar with ESD-safe handling procedures and workspace setup.</li>
+              <li>Capable of performing hands-on hardware debugging using multimeters and oscilloscopes after assembly
+                or rework. </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft Skills Section -->
+
+  <section class="py-16" style="background-color: #c4f3fe;">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Soft Skills</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="flex items-center mb-3 space-x-3">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+              <i class="ri-team-fill ri-lg text-primary"></i>
+            </div>
+            <h4 class="text-gray-800 font-medium mb-0">
+              Team Collaboration
+            </h4>
+          </div>
+          <p class="text-gray-600 text-sm text-justify">
+            • Strong team player with effective communication and collaboration skills.<br>
+            • Experienced in working within cross-functional teams across hardware, firmware, and software
+            disciplines.<br>
+            • Proficient in using version control systems, issue trackers (e.g., GitLab, GitHub, Jira), and agile
+            development practices following the Scrum framework.<br>
+            • Contributes actively to code reviews, technical discussions, and sprint planning.<br>
+            • Skilled in planning and conducting cross-training sessions to share knowledge, align team capabilities,
+            and improve overall team performance.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="flex items-center mb-3 space-x-3">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+              <i class="ri-lightbulb-fill ri-lg text-primary"></i>
+            </div>
+            <h4 class="text-gray-800 font-medium mb-0">Problem Solving</h4>
+          </div>
+          <p class="text-gray-600 text-sm text-justify">
+            • Strong analytical thinking and creative problem-solving skills, with the ability to troubleshoot complex
+            hardware and software issues across embedded systems and electronics.<br>
+            • Experienced in root cause analysis, system debugging, and iterative testing to develop effective and
+            reliable solutions.<br>
+            • Able to quickly adapt to new challenges, prioritize issues, and propose practical improvements in both
+            design and implementation phases.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="flex items-center mb-3 space-x-3">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+              <i class="ri-time-fill ri-lg text-primary"></i>
+            </div>
+            <h4 class="text-gray-800 font-medium mb-0">Time Management</h4>
+          </div>
+          <p class="text-gray-600 text-sm text-justify">
+            • Strong ability to prioritize tasks and manage time effectively to meet project deadlines.<br>
+            • Experienced in task scheduling, breaking down complex projects into manageable milestones, and balancing
+            multiple responsibilities across hardware and software domains.<br>
+            • Skilled in using tools like Kanban boards and sprint planning to stay organized and ensure efficient task
+            execution.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="flex items-center mb-3 space-x-3">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+              <i class="ri-presentation-fill ri-lg text-primary"></i>
+            </div>
+            <h4 class="text-gray-800 font-medium mb-0">Communication</h4>
+          </div>
+          <p class="text-gray-600 text-sm text-justify">
+            • Clear and concise verbal and written communication skills. <br>
+            • Experienced in documenting technical concepts, writing reports, and creating user or developer guides.<br>
+            • Comfortable presenting ideas in meetings, design reviews, and project updates.<br>
+            • Skilled in delivering project presentations to technical and non-technical audiences, effectively
+            communicating goals, progress, and outcomes.<br>
+            • Able to adapt communication style to ensure alignment across engineering teams and stakeholders.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="flex items-center mb-3 space-x-3">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+              <i class="ri-user-settings-fill ri-lg text-primary"></i>
+            </div>
+            <h4 class="text-gray-800 font-medium mb-0">Adaptability</h4>
+          </div>
+          <p class="text-gray-600 text-sm text-justify">
+            • Quick to learn and adapt to new technologies, tools, and development environments. <br>
+            • Comfortable working in fast-paced or evolving project scopes, with the ability to shift priorities and
+            respond effectively to unexpected challenges. <br>
+            • Experienced in integrating new frameworks, hardware platforms, and workflows with
+            minimal ramp-up time, ensuring continuous productivity and contribution in dynamic team settings.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="flex items-center mb-3 space-x-3">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+              <i class="ri-focus-3-fill ri-lg text-primary"></i>
+            </div>
+            <h4 class="text-gray-800 font-medium mb-0">Attention to Detail</h4>
+          </div>
+          <p class="text-gray-600 text-sm text-justify">
+            • Committed to thoroughness and precision in all aspects of development work, from schematic design and code
+            implementation to testing and documentation. <br>
+            • Skilled at identifying edge cases, preventing defects, and
+            ensuring accuracy in hardware layouts, firmware logic, and system integration. <br>
+            • Focused on maintaining high standards for quality, consistency, and reliability throughout the development
+            lifecycle.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section id="experience" class="py-16" style="background-color: #ffffff;">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Work Experience -->
+        <div style="background-color: #ffffff;">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8">
+            Work Experience
+          </h2>
+          <div class="relative pl-8 border-l border-gray-200">
+            <div class="timeline-item relative mb-12 pl-6">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Thesis Project
+              </h3>
+              <p class="text-primary font-medium mb-2">Metropolia Robo Garage, Myyrmäki, Finland | 01/2025 – 05/2025</p>
+
+              <p class="text-gray-800 text-sm text-left">
+                <strong>Responsibilities</strong><br>
+                • Designed custom hardware including an Ethernet switch and Raspberry Pi CM5 I/O boards using
+                EasyEDA.<br>
+                • Developed a Python application for real-time video streaming from onboard cameras.<br>
+                • Implemented brushless motor control using Python to achieve precise movement.<br>
+                • Collaborated in full-system integration and field testing of the robot.<br><br>
+                <strong>Gained Knowledge</strong><br>
+                • Hardware-software co-design for embedded systems.<br>
+                • Real-time communication and debugging of robotic subsystems.<br>
+                • Team-based development in a multidisciplinary environment.<br><br>
+                <strong>Technologies & Tools:</strong><br>
+                Python, pyRTOS, pygame, PS4 controller, Raspberry Pi CM5, BLDC
+                motors, Ethernet, WebSocket, EasyEDA, GPIO/PWM, PCB design.
+              </p>
+
+            </div>
+            <div class="timeline-item relative mb-12 pl-6">
+              <h3 class="text-xl font-semibold text-gray-800">
+                IT Helpdesk
+              </h3>
+              <p class="text-primary font-medium mb-2">
+                Metropolia University of Applied Sciences, Finland | 05/2024 – 08/2024
+              </p>
+              <p class="text-gray-800 text-sm text-left">
+                <strong>Responsibilities</strong><br>
+                • Set up workbench PC systems and peripherals.<br>
+                • Deployed Windows images and software to multiple machines using network-based installation.<br>
+                • Diagnosed and resolved IT-related tickets, including issues with Audio Visual (AV) equipment, ensuring
+                smooth classroom and office operations.<br>
+                • Provided on-site support to staff and students for hardware and software-related issues.<br><br>
+                <strong>Gained Knowledge</strong><br>
+                • Developed familiarity with various IT hardware types (desktops, laptops, AV systems).<br>
+                • Gained hands-on experience in large-scale Windows image deployment over network.<br>
+                • Learned the structure and functionality of classroom AV systems (e.g., projectors, control
+                panels).<br>
+                • Practiced effective cable management for safety and accessibility.<br>
+                • Used Microsoft Planner for task tracking and prioritization in a team environment.<br>
+                • Collaborated in a multidisciplinary IT support team, improving teamwork and communication
+                skills.<br><br>
+                <strong>Technologies & Tools:</strong><br>
+                Microsoft Planner, Ethernet LAN, Logitech, Crestron, Caverion, Cisco.
+              </p>
+            </div>
+            <div class="timeline-item relative mb-12 pl-6">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Python Course Assistant
+              </h3>
+              <p class="text-primary font-medium mb-2">Metropolia University of Applied Sciences, Karaportti, Finland |
+                01/2023 – 12/2023
+              </p>
+              <p class="text-gray-800 text-sm text-left">
+                <strong>Responsibilities</strong><br>
+                • Assisted students with understanding core Python programming concepts during lab sessions and
+                workshops.<br>
+                • Provided hands-on support in debugging code, implementing algorithms, and completing course
+                assignments.<br>
+                • Clarified complex topics such as data structures, object-oriented programming, and file handling.<br>
+                • Collaborated with course instructors to align support efforts with curriculum goals.<br><br>
+                <strong>Gained Knowledge</strong><br>
+                • Strengthened Python proficiency through teaching and problem-solving.<br>
+                • Developed effective interpersonal and communication skills by mentoring a diverse group of
+                students.<br>
+                • Improved ability to explain technical concepts clearly and adapt to different learning styles.<br>
+                • Gained experience in educational support and peer instruction environments.<br>
+                • Developed strong interpersonal communication skills.<br><br>
+                <strong>Technologies & Tools:</strong><br>
+                Python, VS Code, Git, Moodle.
+              </p>
+            </div>
+            <div class="timeline-item relative mb-12 pl-6">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Electronics Engineer | Business Owner | Hobbyist
+              </h3>
+              <p class="text-primary font-medium mb-2">Vietnam (2015 – 2022) | Finland (2022 - Present)
+              </p>
+              <p class="text-gray-800 text-sm text-left">
+                <strong>Responsibilities</strong><br>
+                • Designed, manufactured, and repaired musical equipment including guitar amplifiers and effect
+                pedals.<br>
+                • Developed custom audio solutions using core electronics engineering principles.<br>
+                • Built various robots and embedded systems, covering mechanical, electrical, and electronic system
+                integration.<br><br>
+                <strong>Gained Knowledge</strong><br>
+                • Strengthened analog and digital circuit design and troubleshooting skills.<br>
+                • Deepened understanding of audio electronics and signal processing.<br>
+                • Gained hands-on experience in full-cycle product development, from concept to testing.<br>
+                • Acquired practical knowledge in robotics integration, including mechanical design and actuator
+                control.<br>
+                • Improved embedded system design best practices, including hardware-software co-design and real-time
+                performance optimization.<br>
+                • Developed proficiency in PCB design, soldering, and fine-pitch/hot-air rework techniques.<br>
+                • Improved 3D modeling skills for enclosure and mechanical part design.<br>
+                • Developed customer service and business management skills through direct client interaction and
+                operations oversight.<br><br>
+                <strong>Technologies & Tools:</strong><br>
+                Custom PCBs, Embedded C/C++, Python, Arduino, ESP32, AVR, STM32, RP2040, Raspberry Pi, Wi-Fi, Bluetooth,
+                LoRa, RF, SPI, I2C, UART, Modbus, Bare-Metal, FreeRTOS, pyRTOS, Soldering Station, Digital Microscope,
+                Oscilloscope, Multimeter, LTspice, Autodesk Fusion 360, EasyEDA.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Education -->
+        <div style="background-color: #ffffff;">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8">Education</h2>
+          <div class="relative pl-8 border-l border-gray-200">
+            <div class="timeline-item relative mb-12 pl-6">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Bachelor of Engineering - Information Technology
+              </h3>
+              <p class="text-primary font-medium mb-2">Metropolia University of Applied Sciences, Finland (2022 - 2025)
+              </p>
+              <p class="text-gray-800 mb-3">GPA: 4.95 / 5.0</p>
+              <p class="text-gray-800 text-sm">
+                Specialization: Smart IoT Systems.<br>
+                Thesis: Development of Custom Hardware and Software for Real-time Multi-robot System.<br>
+              </p>
+              <p class="text-primary text-sm"> <a href="https://urn.fi/URN:NBN:fi:amk-2025051411722" target="_blank"
+                  rel="noopener noreferrer">(Link to the thesis)</a></p>
+            </div>
+            <div class="timeline-item relative mb-12 pl-6">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Bachelor of Engineering - Electrical, Electronics and Communications
+              </h3>
+              <p class="text-primary font-medium mb-2">
+                Can Tho University, Vietnam (2002 - 2007)
+              </p>
+              <p class="text-gray-800 mb-3">GPA: 7.46 / 10.0</p>
+              <p class="text-gray-800 text-sm">
+                Specialization: Automation and Control Systems.
+              </p>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <h2 class="text-3xl font-bold text-gray-800 mb-8">Languages</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-white pl-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <div class="language-dot bg-primary"></div>
+                <h3 class="text-xl font-semibold text-gray-800">Vietnamese</h3>
+              </div>
+              <p class="text-gray-600 mb-3 text-sm">Native Proficiency</p>
+              <div class="flex">
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full"></span>
+              </div>
+            </div>
+            <div class="bg-white pl-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <div class="language-dot bg-primary"></div>
+                <h3 class="text-xl font-semibold text-gray-800">English</h3>
+              </div>
+              <p class="text-gray-600 mb-3 text-sm">Professional Proficiency</p>
+              <div class="flex">
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-gray-200 rounded-full"></span>
+              </div>
+            </div>
+            <div class="bg-white pl-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <div class="language-dot bg-primary"></div>
+                <h3 class="text-xl font-semibold text-gray-800">Finnish</h3>
+              </div>
+              <p class="text-gray-600 mb-3 text-sm">Basic Proficiency</p>
+              <div class="flex">
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-gray-200 rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-gray-200 rounded-full mr-1"></span>
+                <span class="w-8 h-2 bg-gray-200 rounded-full"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="py-16" style="background-color: #4c99fc;">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+        Featured Projects
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <a href="https://github.com/mongpt/Smart_IoT_System_Thesis"
+          class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="./img/pro1a.png" alt="Embedded IoT System Thesis" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              🤖Embedded IoT System Thesis
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm text-justify">
+              A compact custom I/O board and 3-port Fast Ethernet switch designed for the Raspberry Pi Compute Module 5
+              (CM5), enabling real-time multi-robot control using Python, WebSocket protocol, and PS4 controller input.
+              The system reads joystick commands, sends them over Ethernet to the robots, and adjusts motor speed via
+              PWM, while continuously streaming RPM feedback for closed-loop control. The project utilized a
+              pyRTOS-based scheduler on the robots and multithreading on the remote controller to ensure smooth,
+              responsive operation across all nodes.
+            </p>
+            <p class="text-blue-800 mb-4 text-sm text-left">
+              &raquo;&raquo; GitHub Link &laquo;&laquo;
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Python</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">pyRTOS</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">pygame</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">WebSocket</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">PCB Design</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">PS4 Controller</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Raspberry Pi CM5</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Ethernet Switch</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Git</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Completed: May 2025</span>
+
+            </div>
+          </div>
+        </a>
+        <!-- Project 2 -->
+        <a href="https://github.com/mongpt/SmartPlug_IoT_Project"
+          class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="./img/pro2a.jpg" alt="SmartPlug IoT Project" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              🔌SmartPlug - IoT Project
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm text-justify">
+              A complete end-to-end IoT smart plug system, designed from scratch, from custom PCB layout to firmware
+              development and final functionality testing. Built on Raspberry Pi Pico W and FreeRTOS, the system uses a
+              modular, multi-tasking architecture with rich inter-task communication via queues, semaphores, and event
+              groups to manage concurrent operations such as power sensing, MQTT communication, OTA updates, LCD display
+              control, and safety enforcement. Features include real-time power tracking with ACS712, configurable power
+              limits, a full-color local display, remote scheduling, and secure cloud interaction via MQTT. This project
+              showcases a full-stack embedded design approach integrating hardware, firmware, cloud services, and
+              front-end control.
+            </p>
+            <p class="text-blue-800 mb-4 text-sm text-left">
+              &raquo;&raquo; GitHub Link &laquo;&laquo;
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">C/C++</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">FreeRTOS</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">Pico W</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Wi-Fi</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">MQTT</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">HiveMQ</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">I2C</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">SPI</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">UART</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">ADC</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">RTC</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">EEPROM</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Current Sensor</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">LCD</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">Git</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Completed: March 2025</span>
+
+            </div>
+          </div>
+        </a>
+        <!-- Project 3 -->
+        <a href="https://github.com/mongpt/RP2040_FreeRTOS-based_Greenhouse_CO2_Controller_project"
+          class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="./img/pro3a.png" alt="Greenhouse CO2" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              💨RP2040 FreeRTOS-based Greenhouse CO₂ Controller
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm text-justify">
+              A prototype CO₂ fertilization controller for greenhouse environments, developed as a school project on the
+              Raspberry Pi Pico W using a FreeRTOS-based embedded software stack. The system integrates Vaisala’s
+              industrial-grade sensors to monitor temperature, humidity, and CO₂ levels, coordinating fan and valve
+              control through modular real-time tasks and robust inter-task communication mechanisms (queues,
+              semaphores, event groups). Data is published to the cloud and visualized via ThingSpeak, allowing for
+              remote monitoring and control. Designed for automation, reliability, and real-world sensor integration,
+              this project demonstrates advanced RTOS design in a cloud-connected greenhouse control system.
+            </p>
+            <p class="text-blue-800 mb-4 text-sm text-left">
+              &raquo;&raquo; GitHub Link &laquo;&laquo;
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">C/C++</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">FreeRTOS</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded">REST API</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">ThingSpeak</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Wi-Fi</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">Pico W</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">I2C</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">UART</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Modbus</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">LCD</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">EEPROM</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">CO₂ Sensor</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Git</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Completed: October 2024</span>
+
+            </div>
+          </div>
+        </a>
+        <!-- Project 4 -->
+        <a href="https://github.com/mongpt/RP2040-based_Ventilation_System_Controller_project"
+          class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="./img/pro4a.png" alt="RP2040-based Ventilation System Controller"
+              class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              🌀RP2040-based Ventilation System Controller
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm text-justify">
+              A prototype greenhouse ventilation controller developed as a school project on the Raspberry Pi Pico W,
+              using a bare-metal embedded software stack. The system interfaces with Vaisala’s industrial-grade
+              temperature and humidity sensors to monitor environmental conditions and control fan operation using
+              modular state machines and interrupt-driven logic. Environmental data is published to the cloud using the
+              MQTT protocol, enabling real-time remote monitoring and control. Designed with an emphasis on reliability,
+              responsiveness, and real-world sensor integration, this project demonstrates practical low-level embedded
+              development for smart greenhouse applications.
+            </p>
+            <p class="text-blue-800 mb-4 text-sm text-left">
+              &raquo;&raquo; GitHub Link &laquo;&laquo;
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">C/C++</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Pico W</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Wi-Fi</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded">MQTT</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">I2C</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">UART</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Modbus</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">LCD</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">EEPROM</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">CO₂ Sensor</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">Pressure Sensor</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Git</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Completed: March 2024</span>
+
+            </div>
+          </div>
+        </a>
+        <!-- Project 5 -->
+        <a href="https://github.com/mongpt/Pill_dispenser_project"
+          class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="./img/pro5a.png" alt="Pill Dispenser Project" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              💊Pill Dispenser Project
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm text-justify">
+              A prototype smart pill dispenser developed as a second-year embedded systems project on the Raspberry Pi
+              Pico W, using a bare-metal architecture. The system automates daily medication delivery with an
+              8-compartment rotary mechanism driven by a stepper motor and validated through a piezoelectric sensor. An
+              optical fork sensor ensures precise wheel calibration, while an EEPROM module logs system states and
+              events. The dispenser communicates its status over LoRaWAN using the Grove LoRa-E5 module, enabling remote
+              monitoring. Designed for reliability and ease of use, this project demonstrates practical embedded
+              hardware integration for healthcare and assistive technologies.
+            </p>
+            <p class="text-blue-800 mb-4 text-sm text-left">
+              &raquo;&raquo; GitHub Link &laquo;&laquo;
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">C</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Pico W</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">LoRa WAN</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">I2C</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">UART</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">ADC</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">EEPROM</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">Stepper Motor</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Git</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Completed: January 2024</span>
+
+            </div>
+          </div>
+        </a>
+        <!-- Project 6 -->
+        <a href="https://github.com/mongpt/ESP8266-based_voting_client"
+          class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="./img/pro6a.png" alt="ESP8266-based Voting Client"
+              class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              📡ESP8266-based Voting Client
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm text-justify">
+              A wireless polling device system developed collaboratively by students from Metropolia University of
+              Applied Sciences and Hochschule Osnabrück, combining embedded systems, full-stack web development, and
+              hardware design. The device is built on the ESP-12F (ESP8266) microcontroller with a low-power e-paper
+              display and tactile buttons for user input. MQTT is used for efficient message exchange between voting
+              devices and a Flask-based backend running on a Raspberry Pi server, which manages user registration, vote
+              topics, and real-time result visualization. The frontend offers intuitive interfaces for device
+              registration, vote creation, and result monitoring. Designed for scalability, minimal power consumption,
+              and ease of use, the project demonstrates practical integration of IoT, embedded programming, and web
+              technologies in a distributed, real-time application.
+            </p>
+            <p class="text-blue-800 mb-4 text-sm text-left">
+              &raquo;&raquo; GitHub Link &laquo;&laquo;
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">C/C++</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Arduino</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">ESP8266</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Wi-Fi</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded">MQTT</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">UART</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">SPI</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">ADC</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">E-Paper LCD</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">3D Modeling</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Custom PCB</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Git</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Completed: February 2024</span>
+
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+        Get In Touch
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">
+            Contact Information
+          </h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                <i class="ri-mail-fill ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h4 class="text-gray-700 font-medium">Email</h4>
+                <a href="mailto:mongphantan@gmail.com" class="text-primary hover:underline">mongphantan@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                <i class="ri-phone-fill ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h4 class="text-gray-700 font-medium">Phone</h4>
+                <a href="tel:+358 413113368" class="text-gray-600 hover:text-primary">+358 413113368</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+                <i class="ri-map-pin-fill ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h4 class="text-gray-700 font-medium">Location</h4>
+                <p class="text-gray-600">Espoo, Finland</p>
+              </div>
+            </div>
+            <div class="pt-4">
+              <h4 class="text-gray-700 font-medium mb-4">Connect with me</h4>
+              <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/mong-phan-124254253/"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary/10 text-gray-600 hover:text-primary rounded-full transition-colors">
+                  <i class="ri-linkedin-fill ri-lg"></i>
+                </a>
+                <a href="https://github.com/mongpt"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary/10 text-gray-600 hover:text-primary rounded-full transition-colors">
+                  <i class="ri-github-fill ri-lg"></i>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">
+            Send Me a Message
+          </h3>
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+              <input type="text" id="name" name="name"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" required />
+            </div>
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+              <input type="email" id="email" name="email"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" required />
+            </div>
+            <div>
+              <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+              <input type="text" id="subject" name="subject"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" required />
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+              <textarea id="message" name="message" rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded resize-none focus:border-primary"
+                required></textarea>
+            </div>
+            <button type="submit"
+              class="px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a href="#" class="text-2xl font-['Pacifico'] text-white">Mong P.</a>
+          <p class="mt-2 text-gray-400">Electronics & Embedded Engineer</p>
+        </div>
+        <div class="flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0">
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+              </li>
+              <li>
+                <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">
+          © 2025 Mong Phan. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

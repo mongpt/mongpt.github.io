@@ -1,0 +1,68 @@
+:where([class^="ri-"])::before {
+      content: "\f3c2";
+}
+
+body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+}
+
+.progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #ebe6e5;
+      overflow: hidden;
+}
+
+.progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      background-color: #3b82f6;
+      transition: width 0.5s ease-in-out;
+}
+
+.timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      border: 3px solid white;
+      z-index: 1;
+}
+
+.timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: -40px;
+      width: 1px;
+      background-color: #e5e7eb;
+}
+
+.timeline-item:last-child::after {
+      display: none;
+}
+
+input:focus,
+textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+}
+
+.project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.language-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+}

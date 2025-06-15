@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Anderson - Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#3b82f6", secondary: "#10b981" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+.progress-bar {
+height: 8px;
+border-radius: 4px;
+background-color: #e5e7eb;
+overflow: hidden;
+}
+.progress-fill {
+height: 100%;
+border-radius: 4px;
+background-color: #3b82f6;
+transition: width 0.5s ease-in-out;
+}
+.timeline-item::before {
+content: '';
+position: absolute;
+left: -9px;
+top: 0;
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background-color: #3b82f6;
+border: 3px solid white;
+z-index: 1;
+}
+.timeline-item::after {
+content: '';
+position: absolute;
+left: 0;
+top: 18px;
+bottom: -40px;
+width: 1px;
+background-color: #e5e7eb;
+}
+.timeline-item:last-child::after {
+display: none;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #3b82f6;
+}
+.project-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.language-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+display: inline-block;
+margin-right: 8px;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">John A.</a>
+<div class="hidden md:flex space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+<a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+<a href="#experience" class="text-gray-700 hover:text-primary font-medium transition-colors">Experience</a>
+<a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+<!-- Mobile menu -->
+<div class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md" id="mobile-menu">
+<div class="container mx-auto px-6 py-2 flex flex-col space-y-4">
+<a href="#home" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Home</a>
+<a href="#projects" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Projects</a>
+<a href="#experience" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Experience</a>
+<a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24" style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520modern%2520professional%2520background%2520with%2520soft%2520blue%2520gradient%252C%2520subtle%2520geometric%2520patterns%252C%2520clean%2520and%2520minimalist%2520design%252C%2520perfect%2520for%2520portfolio%2520website%252C%2520light%2520colors%2520with%2520white%2520space%2520on%2520the%2520left%2520side%2520for%2520text%2520content%252C%2520professional%2520atmosphere&width=1920&height=600&seq=hero123&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center w-full">
+<div class="md:w-1/2 text-left">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">John Anderson</h1>
+<h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">Full Stack Developer</h2>
+<p class="text-gray-600 mb-8 max-w-lg">Passionate developer with 5+ years of experience creating elegant solutions to complex problems. Specialized in building scalable web applications with modern technologies.</p>
+<div class="flex space-x-4">
+<a href="#projects" class="px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap">View Projects</a>
+<a href="#contact" class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap">Contact Me</a>
+</div>
+</div>
+<div class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
+<div class="relative w-64 h-64 md:w-80 md:h-80">
+<div class="absolute inset-0 bg-primary/10 rounded-full -rotate-6"></div>
+<img src="https://readdy.ai/api/search-image?query=professional%2520portrait%2520of%2520a%2520male%2520software%2520developer%2520in%2520his%252030s%252C%2520wearing%2520smart%2520casual%2520attire%252C%2520friendly%2520smile%252C%2520clean%2520background%252C%2520high%2520quality%2520professional%2520headshot%252C%2520modern%2520tech%2520professional%252C%2520confident%2520pose%252C%2520studio%2520lighting&width=400&height=400&seq=profile123&orientation=squarish" alt="John Anderson" class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-white shadow-lg">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">My Tech Stack</h2>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-8">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-html5-fill ri-2x text-[#E34F26]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">HTML5</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-css3-fill ri-2x text-[#1572B6]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">CSS3</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-javascript-fill ri-2x text-[#F7DF1E]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">JavaScript</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-reactjs-fill ri-2x text-[#61DAFB]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">React</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-nodejs-fill ri-2x text-[#339933]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Node.js</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-database-2-fill ri-2x text-[#4479A1]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">SQL</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-vuejs-fill ri-2x text-[#4FC08D]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Vue.js</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-python-fill ri-2x text-[#3776AB]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Python</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-github-fill ri-2x text-[#181717]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Git</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-docker-fill ri-2x text-[#2496ED]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Docker</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-aws-fill ri-2x text-[#232F3E]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">AWS</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3">
+<i class="ri-terminal-box-fill ri-2x text-[#4EAA25]"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Bash</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section id="projects" class="py-16">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Platform - Project Details</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#3b82f6", secondary: "#10b981" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico'] text-primary">John A.</a>
+<div class="flex items-center space-x-6">
+<a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-colors flex items-center">
+<i class="ri-arrow-left-line ri-lg mr-2"></i>
+Back to Portfolio
+</a>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Project Header -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<h1 class="text-4xl font-bold text-gray-800 mb-4">E-Commerce Platform</h1>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded">React</span>
+<span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">Node.js</span>
+<span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded">MongoDB</span>
+<span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded">AWS</span>
+</div>
+<p class="text-gray-600 text-lg mb-8">A comprehensive e-commerce solution featuring user authentication, product management, shopping cart functionality, and secure payment processing.</p>
+<div class="flex items-center text-gray-500 mb-8">
+<div class="flex items-center mr-6">
+<i class="ri-calendar-line ri-lg mr-2"></i>
+<span>Completed: March 2024</span>
+</div>
+<div class="flex items-center">
+<i class="ri-time-line ri-lg mr-2"></i>
+<span>Duration: 6 months</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Images -->
+<section class="py-12">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="rounded-lg overflow-hidden mb-8">
+<img src="https://readdy.ai/api/search-image?query=modern%2520e-commerce%2520website%2520homepage%2520with%2520hero%2520section%2520showcasing%2520featured%2520products%252C%2520clean%2520and%2520professional%2520design%252C%2520shopping%2520categories%252C%2520high-quality%2520product%2520photography%252C%2520clear%2520navigation%252C%2520white%2520background%252C%2520modern%2520UI%2520elements&width=1200&height=600&seq=project1-main&orientation=landscape" alt="E-Commerce Platform Homepage" class="w-full h-full object-cover">
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=e-commerce%2520product%2520listing%2520page%2520with%2520grid%2520layout%252C%2520filter%2520options%252C%2520search%2520functionality%252C%2520clean%2520design%252C%2520product%2520cards%2520with%2520images%2520and%2520details%252C%2520modern%2520UI%252C%2520white%2520background&width=600&height=400&seq=project1-sub1&orientation=landscape" alt="Product Listing Page" class="w-full h-full object-cover">
+</div>
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=e-commerce%2520shopping%2520cart%2520and%2520checkout%2520page%252C%2520payment%2520form%252C%2520order%2520summary%252C%2520clean%2520layout%252C%2520modern%2520design%252C%2520secure%2520payment%2520options%252C%2520white%2520background%252C%2520professional%2520UI&width=600&height=400&seq=project1-sub2&orientation=landscape" alt="Shopping Cart and Checkout" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</section>
+<!-- Project Details -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-gray-800 mb-8">Project Overview</h2>
+<div class="prose max-w-none text-gray-600 space-y-6">
+<p>This e-commerce platform was developed to provide a seamless online shopping experience for both customers and administrators. The project focused on creating a scalable, secure, and user-friendly solution that could handle high traffic and complex transactions.</p>
+<h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Key Features</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-check-line ri-lg text-primary mt-1 mr-3"></i>
+<span>User authentication and profile management with secure password handling and social login options</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line ri-lg text-primary mt-1 mr-3"></i>
+<span>Advanced product search and filtering with real-time updates and category navigation</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line ri-lg text-primary mt-1 mr-3"></i>
+<span>Shopping cart with persistent storage and real-time price calculations</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line ri-lg text-primary mt-1 mr-3"></i>
+<span>Secure payment processing with multiple payment gateway integrations</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line ri-lg text-primary mt-1 mr-3"></i>
+<span>Admin dashboard for inventory management, order processing, and analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line ri-lg text-primary mt-1 mr-3"></i>
+<span>Responsive design optimized for mobile and desktop devices</span>
+</li>
+</ul>
+<h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Technical Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-6 rounded-lg">
+<h4 class="font-semibold text-gray-800 mb-4">Frontend</h4>
+<ul class="space-y-2">
+<li class="flex items-center">
+<i class="ri-reactjs-line ri-lg text-primary mr-2"></i>
+<span>React with Redux for state management</span>
+</li>
+<li class="flex items-center">
+<i class="ri-layout-line ri-lg text-primary mr-2"></i>
+<span>Tailwind CSS for styling</span>
+</li>
+<li class="flex items-center">
+<i class="ri-test-tube-line ri-lg text-primary mr-2"></i>
+<span>Jest and React Testing Library</span>
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg">
+<h4 class="font-semibold text-gray-800 mb-4">Backend</h4>
+<ul class="space-y-2">
+<li class="flex items-center">
+<i class="ri-nodejs-line ri-lg text-primary mr-2"></i>
+<span>Node.js with Express</span>
+</li>
+<li class="flex items-center">
+<i class="ri-database-2-line ri-lg text-primary mr-2"></i>
+<span>MongoDB with Mongoose ODM</span>
+</li>
+<li class="flex items-center">
+<i class="ri-shield-check-line ri-lg text-primary mr-2"></i>
+<span>JWT authentication</span>
+</li>
+</ul>
+</div>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Challenges & Solutions</h3>
+<div class="space-y-6">
+<div class="bg-white p-6 rounded-lg">
+<h4 class="font-semibold text-gray-800 mb-2">Performance Optimization</h4>
+<p>Implemented lazy loading, image optimization, and caching strategies to improve page load times and overall performance.</p>
+</div>
+<div class="bg-white p-6 rounded-lg">
+<h4 class="font-semibold text-gray-800 mb-2">Scalability</h4>
+<p>Utilized AWS services for auto-scaling and load balancing to handle traffic spikes and ensure consistent performance.</p>
+</div>
+<div class="bg-white p-6 rounded-lg">
+<h4 class="font-semibold text-gray-800 mb-2">Security</h4>
+<p>Implemented robust security measures including input validation, XSS protection, and secure payment processing compliance.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- More Projects -->
+<section class="py-12">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-gray-800 mb-8">More Projects</h2>
+<div class="grid grid-cols-1 gap-6">
+<a href="project-2.html" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=data%2520visualization%2520dashboard%2520with%2520charts%252C%2520graphs%252C%2520analytics%2520interface%252C%2520business%2520intelligence%2520tool%252C%2520modern%2520UI%2520design%252C%2520clean%2520layout%252C%2520professional%2520dashboard&width=600&height=300&seq=project2-thumb&orientation=landscape" alt="Analytics Dashboard" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Analytics Dashboard</h3>
+<p class="text-gray-600 mb-4">Interactive data visualization dashboard for business intelligence.</p>
+<span class="text-primary font-medium flex items-center">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1 group-hover:translate-x-1 transition-transform"></i>
+</span>
+</div>
+</a>
+<a href="project-3.html" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=mobile%2520fitness%2520application%2520interface%2520showing%2520workout%2520tracking%252C%2520health%2520metrics%252C%2520clean%2520mobile%2520UI%2520design%252C%2520activity%2520monitoring%252C%2520modern%2520health%2520app&width=600&height=300&seq=project3-thumb&orientation=landscape" alt="Fitness Tracker App" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Fitness Tracker App</h3>
+<p class="text-gray-600 mb-4">Mobile application for tracking workouts and health metrics.</p>
+<span class="text-primary font-medium flex items-center">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1 group-hover:translate-x-1 transition-transform"></i>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<a href="index.html" class="text-2xl font-['Pacifico'] text-white">John A.</a>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-dribbble-fill ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

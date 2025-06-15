@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mong Phan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3b82f6", secondary: "#10b981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      }
+      .progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #e5e7eb;
+      overflow: hidden;
+      }
+      .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      background-color: #3b82f6;
+      transition: width 0.5s ease-in-out;
+      }
+      .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      border: 3px solid white;
+      z-index: 1;
+      }
+      .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: -40px;
+      width: 1px;
+      background-color: #e5e7eb;
+      }
+      .timeline-item:last-child::after {
+      display: none;
+      }
+      input:focus, textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      }
+      .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .language-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-['Pacifico'] text-primary">Mong P.</a>
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Home</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+          id="mobile-menu-button"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden hidden bg-white w-full absolute top-16 left-0 shadow-md"
+        id="mobile-menu"
+      >
+        <div class="container mx-auto px-6 py-2 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Home</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="pt-24 pb-16 md:pt-32 md:pb-24"
+      style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520modern%2520professional%2520background%2520with%2520soft%2520blue%2520gradient%252C%2520subtle%2520geometric%2520patterns%252C%2520clean%2520and%2520minimalist%2520design%252C%2520perfect%2520for%2520portfolio%2520website%252C%2520light%2520colors%2520with%2520white%2520space%2520on%2520the%2520left%2520side%2520for%2520text%2520content%252C%2520professional%2520atmosphere&width=1920&height=600&seq=hero123&orientation=landscape'); background-size: cover; background-position: center;"
+    >
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center w-full">
+          <div class="md:w-1/2 text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Mong Phan
+            </h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
+              Full Stack Developer
+            </h2>
+            <p class="text-gray-600 mb-8 max-w-lg">
+              Passionate developer with 5+ years of experience creating elegant
+              solutions to complex problems. Specialized in building scalable
+              web applications with modern technologies.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#projects"
+                class="px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >View Projects</a
+              >
+              <a
+                href="#contact"
+                class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+          <div
+            class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end"
+          >
+            <div class="relative w-64 h-64 md:w-80 md:h-80">
+              <div
+                class="absolute inset-0 bg-primary/10 rounded-full -rotate-6"
+              ></div>
+              <img
+                src="./img/hinh_CV.png"
+                alt="Mong Phan"
+                class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tech Stack -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          My Tech Stack
+        </h2>
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-8">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-html5-fill ri-2x text-[#E34F26]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">HTML5</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-css3-fill ri-2x text-[#1572B6]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">CSS3</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-javascript-fill ri-2x text-[#F7DF1E]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">JavaScript</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-reactjs-fill ri-2x text-[#61DAFB]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">React</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-nodejs-fill ri-2x text-[#339933]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Node.js</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-database-2-fill ri-2x text-[#4479A1]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">SQL</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-vuejs-fill ri-2x text-[#4FC08D]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Vue.js</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-python-fill ri-2x text-[#3776AB]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Python</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-github-fill ri-2x text-[#181717]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Git</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-docker-fill ri-2x text-[#2496ED]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Docker</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-aws-fill ri-2x text-[#232F3E]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">AWS</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm mb-3"
+            >
+              <i class="ri-terminal-box-fill ri-2x text-[#4EAA25]"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Bash</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Projects -->
+    <section id="projects" class="py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Featured Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <a
+            href="project1.html"
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=modern%2520e-commerce%2520website%2520interface%2520with%2520clean%2520design%252C%2520showing%2520product%2520grid%2520layout%252C%2520professional%2520UI%252C%2520shopping%2520cart%2520functionality%252C%2520high-quality%2520product%2520images%252C%2520responsive%2520design%252C%2520user-friendly%2520navigation%252C%2520modern%2520web%2520application&width=600&height=300&seq=project1&orientation=landscape"
+                alt="E-Commerce Platform"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                E-Commerce Platform
+              </h3>
+              <p class="text-gray-600 mb-4">
+                A full-featured online shopping platform with payment
+                integration, user authentication, and inventory management.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded"
+                  >MongoDB</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">Completed: March 2024</span>
+                <span class="text-primary font-medium flex items-center">
+                  View Details
+                  <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+          <!-- Project 2 -->
+          <a
+            href="project-details.html?id=2"
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=data%2520visualization%2520dashboard%2520with%2520charts%252C%2520graphs%252C%2520analytics%2520interface%252C%2520business%2520intelligence%2520tool%252C%2520modern%2520UI%2520design%252C%2520clean%2520layout%252C%2520data%2520metrics%2520display%252C%2520professional%2520dashboard%2520with%2520statistics%2520and%2520KPIs&width=600&height=300&seq=project2&orientation=landscape"
+                alt="Analytics Dashboard"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Analytics Dashboard
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Interactive data visualization dashboard for business
+                intelligence with real-time updates and customizable widgets.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded"
+                  >Vue.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded"
+                  >D3.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
+                  >Firebase</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  >Completed: November 2023</span
+                >
+                <span class="text-primary font-medium flex items-center">
+                  View Details
+                  <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+          <!-- Project 3 -->
+          <a
+            href="project-details.html?id=3"
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=mobile%2520fitness%2520application%2520interface%2520showing%2520workout%2520tracking%252C%2520health%2520metrics%252C%2520clean%2520mobile%2520UI%2520design%252C%2520activity%2520monitoring%252C%2520exercise%2520plans%252C%2520nutrition%2520tracking%252C%2520modern%2520health%2520app%2520on%2520smartphone%2520screen&width=600&height=300&seq=project3&orientation=landscape"
+                alt="Fitness Tracker App"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Fitness Tracker App
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Mobile application for tracking workouts, nutrition, and health
+                metrics with personalized recommendations.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
+                  >React Native</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded"
+                  >GraphQL</span
+                >
+                <span
+                  class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded"
+                  >AWS</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">Completed: July 2023</span>
+                <span class="text-primary font-medium flex items-center">
+                  View Details
+                  <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+          <!-- Project 4 -->
+          <a
+            href="project-details.html?id=4"
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=AI%2520chatbot%2520interface%2520with%2520conversation%2520bubbles%252C%2520natural%2520language%2520processing%252C%2520modern%2520chat%2520application%2520design%252C%2520virtual%2520assistant%2520UI%252C%2520clean%2520messaging%2520interface%252C%2520intelligent%2520conversation%2520system%252C%2520professional%2520chatbot%2520design&width=600&height=300&seq=project4&orientation=landscape"
+                alt="AI Chatbot"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                AI Chatbot Assistant
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Intelligent conversational agent for customer support with
+                natural language processing and machine learning capabilities.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
+                  >TensorFlow</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded"
+                  >Flask</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  >Completed: January 2023</span
+                >
+                <span class="text-primary font-medium flex items-center">
+                  View Details
+                  <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+          <!-- Project 5 -->
+          <a
+            href="project-details.html?id=5"
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=project%2520management%2520software%2520interface%2520with%2520kanban%2520board%252C%2520task%2520tracking%252C%2520team%2520collaboration%2520features%252C%2520modern%2520UI%2520design%252C%2520productivity%2520tool%252C%2520clean%2520layout%252C%2520professional%2520project%2520planning%2520application&width=600&height=300&seq=project5&orientation=landscape"
+                alt="Project Management Tool"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Project Management Tool
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Collaborative project management platform with task tracking,
+                team communication, and resource allocation features.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
+                  >Angular</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded"
+                  >Express</span
+                >
+                <span
+                  class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded"
+                  >PostgreSQL</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  >Completed: October 2022</span
+                >
+                <span class="text-primary font-medium flex items-center">
+                  View Details
+                  <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+          <!-- Project 6 -->
+          <a
+            href="project-details.html?id=6"
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=blockchain%2520cryptocurrency%2520wallet%2520interface%2520with%2520transaction%2520history%252C%2520digital%2520currency%2520exchange%252C%2520modern%2520fintech%2520application%252C%2520secure%2520wallet%2520UI%252C%2520clean%2520financial%2520dashboard%252C%2520crypto%2520portfolio%2520tracker&width=600&height=300&seq=project6&orientation=landscape"
+                alt="Crypto Wallet"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Crypto Wallet & Exchange
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Secure cryptocurrency wallet and exchange platform with
+                real-time market data and multi-currency support.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded"
+                  >Solidity</span
+                >
+                <span
+                  class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded"
+                  >Web3.js</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">Completed: May 2022</span>
+                <span class="text-primary font-medium flex items-center">
+                  View Details
+                  <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Skills
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-6">
+              Technical Skills
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-gray-700 font-medium"
+                    >Frontend Development</span
+                  >
+                  <span class="text-gray-600">95%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-gray-700 font-medium"
+                    >Backend Development</span
+                  >
+                  <span class="text-gray-600">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-gray-700 font-medium">Database Design</span>
+                  <span class="text-gray-600">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-gray-700 font-medium">DevOps</span>
+                  <span class="text-gray-600">80%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-gray-700 font-medium"
+                    >Mobile Development</span
+                  >
+                  <span class="text-gray-600">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-6">
+              Soft Skills
+            </h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-3"
+                >
+                  <i class="ri-team-fill ri-lg text-primary"></i>
+                </div>
+                <h4 class="text-gray-800 font-medium mb-1">
+                  Team Collaboration
+                </h4>
+                <p class="text-gray-600 text-sm">
+                  Effective communication and cooperation with team members.
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-3"
+                >
+                  <i class="ri-lightbulb-fill ri-lg text-primary"></i>
+                </div>
+                <h4 class="text-gray-800 font-medium mb-1">Problem Solving</h4>
+                <p class="text-gray-600 text-sm">
+                  Analytical thinking and creative solution development.
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-3"
+                >
+                  <i class="ri-time-fill ri-lg text-primary"></i>
+                </div>
+                <h4 class="text-gray-800 font-medium mb-1">Time Management</h4>
+                <p class="text-gray-600 text-sm">
+                  Prioritization and efficient task completion.
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-3"
+                >
+                  <i class="ri-presentation-fill ri-lg text-primary"></i>
+                </div>
+                <h4 class="text-gray-800 font-medium mb-1">Communication</h4>
+                <p class="text-gray-600 text-sm">
+                  Clear and concise verbal and written communication.
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-3"
+                >
+                  <i class="ri-user-settings-fill ri-lg text-primary"></i>
+                </div>
+                <h4 class="text-gray-800 font-medium mb-1">Adaptability</h4>
+                <p class="text-gray-600 text-sm">
+                  Quick learning and adjustment to new technologies.
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-3"
+                >
+                  <i class="ri-focus-3-fill ri-lg text-primary"></i>
+                </div>
+                <h4 class="text-gray-800 font-medium mb-1">
+                  Attention to Detail
+                </h4>
+                <p class="text-gray-600 text-sm">
+                  Thoroughness and precision in development work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience & Education -->
+    <section id="experience" class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Work Experience -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">
+              Work Experience
+            </h2>
+            <div class="relative pl-8 border-l border-gray-200">
+              <div class="timeline-item relative mb-12 pl-6">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Senior Full Stack Developer
+                </h3>
+                <p class="text-primary font-medium mb-2">TechNova Solutions</p>
+                <p class="text-gray-500 mb-3">January 2022 - Present</p>
+                <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                  <li>Lead development of enterprise-level web applications</li>
+                  <li>Architect scalable cloud infrastructure on AWS</li>
+                  <li>Mentor junior developers and conduct code reviews</li>
+                  <li>
+                    Implement CI/CD pipelines for automated testing and
+                    deployment
+                  </li>
+                </ul>
+              </div>
+              <div class="timeline-item relative mb-12 pl-6">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Full Stack Developer
+                </h3>
+                <p class="text-primary font-medium mb-2">
+                  Digital Dynamics Inc.
+                </p>
+                <p class="text-gray-500 mb-3">March 2020 - December 2021</p>
+                <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                  <li>
+                    Developed responsive web applications using React and
+                    Node.js
+                  </li>
+                  <li>
+                    Optimized database queries and improved application
+                    performance
+                  </li>
+                  <li>
+                    Collaborated with UX/UI designers to implement user-friendly
+                    interfaces
+                  </li>
+                  <li>Integrated third-party APIs and payment gateways</li>
+                </ul>
+              </div>
+              <div class="timeline-item relative mb-12 pl-6">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Frontend Developer
+                </h3>
+                <p class="text-primary font-medium mb-2">WebCraft Studios</p>
+                <p class="text-gray-500 mb-3">June 2018 - February 2020</p>
+                <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                  <li>
+                    Built interactive user interfaces with HTML, CSS, and
+                    JavaScript
+                  </li>
+                  <li>
+                    Implemented responsive designs for mobile and desktop
+                    platforms
+                  </li>
+                  <li>Worked with Vue.js to create single-page applications</li>
+                  <li>Participated in Agile development processes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Education -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Education</h2>
+            <div class="relative pl-8 border-l border-gray-200">
+              <div class="timeline-item relative mb-12 pl-6">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Master of Science in Computer Science
+                </h3>
+                <p class="text-primary font-medium mb-2">Stanford University</p>
+                <p class="text-gray-500 mb-3">2016 - 2018</p>
+                <p class="text-gray-600">
+                  Specialized in Artificial Intelligence and Machine Learning.
+                  Thesis on "Neural Networks for Natural Language Processing."
+                </p>
+              </div>
+              <div class="timeline-item relative mb-12 pl-6">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Bachelor of Science in Software Engineering
+                </h3>
+                <p class="text-primary font-medium mb-2">
+                  University of California, Berkeley
+                </p>
+                <p class="text-gray-500 mb-3">2012 - 2016</p>
+                <p class="text-gray-600">
+                  Graduated with honors. Participated in multiple hackathons and
+                  coding competitions.
+                </p>
+              </div>
+              <div class="timeline-item relative mb-12 pl-6">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Professional Certifications
+                </h3>
+                <p class="text-primary font-medium mb-2">
+                  Various Institutions
+                </p>
+                <p class="text-gray-500 mb-3">2018 - Present</p>
+                <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                  <li>AWS Certified Solutions Architect</li>
+                  <li>Google Cloud Professional Developer</li>
+                  <li>MongoDB Certified Developer</li>
+                  <li>Certified Scrum Master</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Languages -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Languages
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="language-dot bg-primary"></div>
+              <h3 class="text-xl font-semibold text-gray-800">English</h3>
+            </div>
+            <p class="text-gray-600 mb-3">Native proficiency</p>
+            <div class="flex">
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full"></span>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="language-dot bg-primary"></div>
+              <h3 class="text-xl font-semibold text-gray-800">Spanish</h3>
+            </div>
+            <p class="text-gray-600 mb-3">Professional proficiency</p>
+            <div class="flex">
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-gray-200 rounded-full"></span>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="language-dot bg-primary"></div>
+              <h3 class="text-xl font-semibold text-gray-800">French</h3>
+            </div>
+            <p class="text-gray-600 mb-3">Intermediate proficiency</p>
+            <div class="flex">
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-primary rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-gray-200 rounded-full mr-1"></span>
+              <span class="w-8 h-2 bg-gray-200 rounded-full"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Get In Touch
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-6">
+              Contact Information
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                >
+                  <i class="ri-mail-fill ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-gray-700 font-medium">Email</h4>
+                  <a
+                    href="mailto:mongphantan@gmail.com"
+                    class="text-primary hover:underline"
+                    >mongphantan@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                >
+                  <i class="ri-phone-fill ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-gray-700 font-medium">Phone</h4>
+                  <a
+                    href="tel:+358 413113368"
+                    class="text-gray-600 hover:text-primary"
+                    >+358 413113368</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                >
+                  <i class="ri-map-pin-fill ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-gray-700 font-medium">Location</h4>
+                  <p class="text-gray-600">Espoo, Finland</p>
+                </div>
+              </div>
+              <div class="pt-4">
+                <h4 class="text-gray-700 font-medium mb-4">Connect with me</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary/10 text-gray-600 hover:text-primary rounded-full transition-colors"
+                  >
+                    <i class="ri-linkedin-fill ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary/10 text-gray-600 hover:text-primary rounded-full transition-colors"
+                  >
+                    <i class="ri-github-fill ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary/10 text-gray-600 hover:text-primary rounded-full transition-colors"
+                  >
+                    <i class="ri-twitter-fill ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary/10 text-gray-600 hover:text-primary rounded-full transition-colors"
+                  >
+                    <i class="ri-dribbble-fill ri-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-6">
+              Send Me a Message
+            </h3>
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded resize-none focus:border-primary"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <a href="#" class="text-2xl font-['Pacifico'] text-white"
+              >Mong P.</a
+            >
+            <p class="mt-2 text-gray-400">Full Stack Developer</p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0"
+          >
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#home"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#experience"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Experience</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Resources</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Resume</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400">
+            © 2025 Mong Phan. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0 flex space-x-4">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="ri-linkedin-fill ri-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="ri-github-fill ri-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="ri-twitter-fill ri-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="ri-dribbble-fill ri-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script id="navigation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script id="contact-form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+          // Simple validation
+          if (!name || !email || !subject || !message) {
+            alert("Please fill in all fields");
+            return;
+          }
+          // In a real application, you would send this data to a server
+          // For this demo, we'll just show a success message
+          alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+          contactForm.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
