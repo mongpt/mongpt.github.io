@@ -1,0 +1,162 @@
+:where([class^="ri-"])::before {
+      content: "\f3c2";
+}
+
+body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+}
+
+.progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #ebe6e5;
+      overflow: hidden;
+}
+
+.progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      background-color: #3b82f6;
+      transition: width 0.5s ease-in-out;
+}
+
+.timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      border: 3px solid white;
+      z-index: 1;
+}
+
+.timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: -40px;
+      width: 1px;
+      background-color: #e5e7eb;
+}
+
+.timeline-item:last-child::after {
+      display: none;
+}
+
+input:focus,
+textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+}
+
+.project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.language-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+}
+
+/* Tech stack */
+.tech-stack-table {
+      background-color: #2c2f3a;
+      padding: 30px;
+      border-radius: 12px;
+      margin: auto auto;
+      max-width: fit-content;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tech-stack-table h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #ffffff;
+}
+
+.tech-stack-table table {
+      width: 100%;
+      border-collapse: collapse;
+}
+
+.tech-stack-table th,
+.tech-stack-table td {
+      vertical-align: top;
+      text-align: left;
+      padding: 5px;
+      border-top: 1px solid #ffffff;
+}
+
+.tech-stack-table th {
+      width: 280px;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+}
+
+.tech-stack-table td {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+}
+
+/* Tag badge styles */
+.tag {
+      padding: 4px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      display: inline-block;
+      white-space: nowrap;
+}
+
+/* Color variants */
+.tag.blue {
+      background-color: #1c5cc2;
+      color: white;
+}
+
+.tag.green {
+      background-color: #009900;
+      color: white;
+}
+
+.tag.orange {
+      background-color: #FF5722;
+      color: white;
+}
+
+.tag.red {
+      background-color: #802000;
+      color: white;
+}
+
+.tag.teal {
+      background-color: #14b8a6;
+      color: white;
+}
+
+.tag.yellow {
+      background-color: #eab308;
+      color: black;
+}
+
+.tag.purple {
+      background-color: #660066;
+      color: white;
+}
+
+.tag.gray {
+      background-color: #6b7280;
+      color: white;
+}

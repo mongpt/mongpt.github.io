@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mong Phan - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,23 +79,114 @@
   </section>
   <!-- Tech Stack -->
   <section class="py-16" style="background-color: #ffffff;">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-        My Tech Stack
-      </h2>
-      <div
-        style="background-image: url('./img/tech_stack.png'); background-size:auto; background-position: center; background-repeat: no-repeat; min-height: 405px; border-radius: 8px; padding: 20px;">
-
-      </div>
-
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+      🛠️ My Tech Stack
+    </h2>
+    <div class="tech-stack-table">
+      <table>
+        <tr>
+          <th>📘 Programming Languages</th>
+          <td>
+            <span class="tag blue">C</span>
+            <span class="tag purple">C++</span>
+            <span class="tag gray">Python</span>
+            <span class="tag green">MicroPython</span>
+            <span class="tag orange">HTML</span>
+            <span class="tag blue">CSS</span>
+            <span class="tag yellow">JavaScript</span>
+          </td>
+        </tr>
+        <tr>
+          <th>📚 Frameworks & Libraries</th>
+          <td>
+            <span class="tag orange">FreeRTOS</span>
+            <span class="tag blue">pyRTOS</span>
+            <span class="tag purple">Robot Framework</span>
+            <span class="tag red">Node-RED</span>
+            <span class="tag green">Express</span>
+          </td>
+        </tr>
+        <tr>
+          <th>📟 Operating Systems & Embedded Platforms</th>
+          <td>
+            <span class="tag yellow">Bare-Metal</span>
+            <span class="tag green">Embedded Linux</span>
+            <span class="tag gray">Yocto Project</span>
+            <span class="tag purple">Raspberry Pi Pico</span>
+            <span class="tag orange">Raspberry Pi</span>
+            <span class="tag blue">Arduino</span>
+            <span class="tag yellow">ESP32</span>
+            <span class="tag blue">AVR</span>
+            <span class="tag red">STM32</span>
+            <span class="tag purple">PSoC</span>
+          </td>
+        </tr>
+        <tr>
+          <th>📡 Communication Protocols</th>
+          <td>
+            <span class="tag gray">SPI</span>
+            <span class="tag blue">I²C</span>
+            <span class="tag red">UART</span>
+            <span class="tag orange">BLE</span>
+            <span class="tag blue">Wi-Fi</span>
+            <span class="tag green">Modbus RTU/TCP</span>
+            <span class="tag yellow">LoRa</span>
+            <span class="tag blue">WebSocket</span>
+            <span class="tag purple">HTTP/RESTful</span>
+            <span class="tag gray">MQTT</span>
+          </td>
+        </tr>
+        <tr>
+          <th>🛠 DevOps & Tools</th>
+          <td>
+            <span class="tag yellow">Git</span>
+            <span class="tag green">Gitlab CI/CD</span>
+            <span class="tag purple">Jenkins</span>
+            <span class="tag blue">Docker</span>
+            <span class="tag orange">Microsoft Planner</span>
+            <span class="tag purple">Scrum</span>
+            <span class="tag green">Jira</span>
+          </td>
+        </tr>
+        <tr>
+          <th>🗄 Databases & Storage</th>
+          <td>
+            <span class="tag gray">Flask</span>
+            <span class="tag red">MariaDB</span>
+          </td>
+        </tr>
+        <tr>
+          <th>🧰 Hardware & Electronics Design</th>
+          <td>
+            <span class="tag yellow">KiCad</span>
+            <span class="tag blue">EasyEDA</span>
+            <span class="tag red">OrCAD</span>
+            <span class="tag green">Proteus</span>
+            <span class="tag purple">LTspice</span>
+            <span class="tag blue">Soldering</span>
+            <span class="tag orange">3D Modeling</span>
+          </td>
+        </tr>
+        <tr>
+          <th>🔬 Instrumentation & Debugging Tools</th>
+          <td>
+            <span class="tag purple">Oscilloscope</span>
+            <span class="tag green">Logic Analyzer</span>
+            <span class="tag gray">DMM (Digital Multimeter)</span>
+            <span class="tag red">Signal Generator</span>
+            <span class="tag blue">Power Supplies</span>
+          </td>
+        </tr>
+      </table>
     </div>
   </section>
+
 
   <!-- Technical Skills Section -->
 
   <section class="py-16" style="background-color: #ffffff;">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Technical Skills</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">👷 Technical Skills</h2>
 
       <!-- Tabs -->
       <div class="flex justify-center space-x-20 mb-6" id="tab-buttons">
@@ -210,9 +301,9 @@
 
   <!-- Soft Skills Section -->
 
-  <section class="py-16" style="background-color: #c4f3fe;">
+  <section class="py-16" style="background-color: #4c99fc;">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Soft Skills</h2>
+      <h2 class="text-3xl font-bold text-center mb-8 text-white">🧠 Soft Skills</h2>
       <div class="grid grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded-lg shadow-sm">
           <div class="flex items-center mb-3 space-x-3">
@@ -329,7 +420,7 @@
         <!-- Work Experience -->
         <div style="background-color: #ffffff;">
           <h2 class="text-3xl font-bold text-gray-800 mb-8">
-            Work Experience
+            🏢 Work Experience
           </h2>
           <div class="relative pl-8 border-l border-gray-200">
             <div class="timeline-item relative mb-12 pl-6">
@@ -443,7 +534,7 @@
         </div>
         <!-- Education -->
         <div style="background-color: #ffffff;">
-          <h2 class="text-3xl font-bold text-gray-800 mb-8">Education</h2>
+          <h2 class="text-3xl font-bold text-gray-800 mb-8">🎓 Education</h2>
           <div class="relative pl-8 border-l border-gray-200">
             <div class="timeline-item relative mb-12 pl-6">
               <h3 class="text-xl font-semibold text-gray-800">
@@ -474,7 +565,7 @@
           </div>
 
           <!-- Languages -->
-          <h2 class="text-3xl font-bold text-gray-800 mb-8">Languages</h2>
+          <h2 class="text-3xl font-bold text-gray-800 mb-8">📢 Languages</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="bg-white pl-6 rounded-lg shadow-sm">
               <div class="flex items-center mb-4">
@@ -528,8 +619,8 @@
   <!-- Featured Projects -->
   <section id="projects" class="py-16" style="background-color: #4c99fc;">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-        Featured Projects
+      <h2 class="text-3xl font-bold text-center text-white mb-12">
+        🏆 Featured Projects
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project 1 -->
@@ -794,12 +885,12 @@
   <section id="contact" class="py-16">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-        Get In Touch
+        📞 Get In Touch
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <h3 class="text-xl font-semibold text-gray-800 mb-6">
-            Contact Information
+            📇 Contact Information
           </h3>
           <div class="space-y-6">
             <div class="flex items-start">
@@ -847,7 +938,7 @@
         </div>
         <div>
           <h3 class="text-xl font-semibold text-gray-800 mb-6">
-            Send Me a Message
+            📬 Send Me a Message
           </h3>
           <form id="contact-form" class="space-y-4">
             <div>
@@ -919,7 +1010,7 @@
   <!-- Scripts -->
 
 
-  <script src="script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
