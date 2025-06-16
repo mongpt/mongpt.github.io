@@ -77,6 +77,8 @@
       </div>
     </div>
   </section>
+
+
   <!-- Tech Stack -->
   <section class="py-16" style="background-color: #ffffff;">
     <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
@@ -183,52 +185,53 @@
 
 
   <!-- Technical Skills Section -->
-
   <section class="py-16" style="background-color: #ffffff;">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-8">👷 Technical Skills</h2>
 
       <!-- Tabs -->
-      <div class="flex justify-center space-x-20 mb-6" id="tab-buttons">
+      <div class="flex flex-wrap justify-center space-x-4 mb-6" id="tab-buttons">
         <button
-          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none text-sm md:text-base py-2 px-3"
           data-tab="0">PCB Design</button>
         <button
-          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none text-sm md:text-base py-2 px-3"
           data-tab="1">Embedded System Development</button>
         <button
-          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none text-sm md:text-base py-2 px-3"
           data-tab="2">Robot Framework</button>
         <button
-          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none text-sm md:text-base py-2 px-3"
           data-tab="3">Version Control & CI/CD</button>
         <button
-          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none"
+          class="tab-button font-bold text-gray-600 border-b-2 border-transparent hover:text-blue-600 focus:outline-none text-sm md:text-base py-2 px-3"
           data-tab="4">Hardware Assembly & Soldering</button>
       </div>
 
-      <div class="mt-16"> </div>
+      <div class="mt-16"></div>
 
       <!-- Tab Contents -->
       <div id="tab-contents" class="relative w-full">
         <!-- Content blocks -->
-        <div class="tab-content flex items-start space-x-8" data-tab="0">
-          <img src="./img/PCB.png" alt="PCB Design" class="w-1/3 rounded shadow">
+        <div class="tab-content flex flex-col md:flex-row md:items-start md:space-x-8" data-tab="0">
+          <img src="./img/PCB.png" alt="PCB Design" class="w-full md:w-1/3 rounded shadow mb-4 md:mb-0">
           <div>
             <h3 class="text-xl font-semibold mb-2">PCB Design</h3>
             <ul class="list-disc list-inside">
               <li>Experience with schematic capture, PCB layout, and circuit simulation using tools such as EasyEDA,
                 KiCad, Proteus, and LTspice.</li>
               <li>Skilled in both low- and high-voltage electronics, power electronics, and analog/digital system
-                design.</li>
+                design.
+              </li>
               <li>Knowledgeable in signal integrity and EMI mitigation practices such as controlled impedance routing,
-                ground planes, and decoupling strategies. </li>
+                ground planes, and decoupling strategies.</li>
             </ul>
           </div>
         </div>
 
-        <div class="tab-content hidden flex items-start space-x-8" data-tab="1">
-          <img src="./img/iot_board01.png" alt="Embedded System Development" class="w-1/3 rounded shadow">
+        <div class="tab-content hidden flex flex-col md:flex-row md:items-start md:space-x-8" data-tab="1">
+          <img src="./img/iot_board01.png" alt="Embedded System Development"
+            class="w-full md:w-1/3 rounded shadow mb-4 md:mb-0">
           <div>
             <h3 class="text-xl font-semibold mb-2">Embedded System Development</h3>
             <ul class="list-disc list-inside">
@@ -236,18 +239,21 @@
                 using a variety of microcontrollers, including RP2040, ESP32, STM32, Arduino-based boards, AVR, and
                 Raspberry Pi.</li>
               <li>Skilled in bare-metal programming, FreeRTOS-based development, and system integration.</li>
-              <li>Experienced in Embedded Linux development, including kernel customization using the Yocto
-                Project. </li>
+              <li>Experienced in Embedded Linux development, including kernel customization using the Yocto Project.
+              </li>
               <li>Familiar with peripheral interfacing (SPI, I2C, UART, Modbus), low-power design, real-time
-                constraints, and driver development.</li>
+                constraints,
+                and driver development.</li>
               <li>Hands-on experience with wireless communication technologies such as Wi-Fi, Bluetooth, and LoRa for
-                IoT and embedded applications.</li>
+                IoT
+                and embedded applications.</li>
             </ul>
           </div>
         </div>
 
-        <div class="tab-content hidden flex items-start space-x-8" data-tab="2">
-          <img src="./img/robot_framework.png" alt="Robot Framework" class="w-1/3 rounded shadow">
+        <div class="tab-content hidden flex flex-col md:flex-row md:items-start md:space-x-8" data-tab="2">
+          <img src="./img/robot_framework.png" alt="Robot Framework"
+            class="w-full md:w-1/3 rounded shadow mb-4 md:mb-0">
           <div>
             <h3 class="text-xl font-semibold mb-2">Robot Framework</h3>
             <ul class="list-disc list-inside">
@@ -261,40 +267,40 @@
           </div>
         </div>
 
-        <div class="tab-content hidden flex items-start space-x-8" data-tab="3">
-          <img src="./img/version_control.png" alt="Version Control & CI/CD" class="w-1/3 rounded shadow">
+        <div class="tab-content hidden flex flex-col md:flex-row md:items-start md:space-x-8" data-tab="3">
+          <img src="./img/version_control.png" alt="Version Control & CI/CD"
+            class="w-full md:w-1/3 rounded shadow mb-4 md:mb-0">
           <div>
             <h3 class="text-xl font-semibold mb-2">Version Control & CI/CD</h3>
             <ul class="list-disc list-inside">
-              <li><strong>Git</strong>: Branching, merging, rebasing, conflict resolution, tagging, stash.
-              </li>
+              <li><strong>Git</strong>: Branching, merging, rebasing, conflict resolution, tagging, stash.</li>
               <li><strong>GitLab CI/CD</strong>: Pipeline and job configuration, multi-stage pipelines, parallel jobs.
               </li>
               <li><strong>Automation</strong>: Automated build, test, and deployment workflows</li>
               <li><strong>Environment Management</strong>: Use of variables, secrets, and caching in pipelines</li>
               <li><strong>Monitoring & Debugging</strong>: Pipeline logs analysis, job failure handling, pipeline
-                optimization
-              </li>
+                optimization</li>
             </ul>
           </div>
         </div>
 
-        <div class="tab-content hidden flex items-start space-x-8" data-tab="4">
-          <img src="./img/soldering.png" alt="Hardware Assembly & Soldering" class="w-1/3 rounded shadow">
+        <div class="tab-content hidden flex flex-col md:flex-row md:items-start md:space-x-8" data-tab="4">
+          <img src="./img/soldering.png" alt="Hardware Assembly & Soldering"
+            class="w-full md:w-1/3 rounded shadow mb-4 md:mb-0">
           <div>
             <h3 class="text-xl font-semibold mb-2">Hardware Assembly & Soldering</h3>
             <ul class="list-disc list-inside">
-              <li>Proficient in soldering and hardware assembly, including both through-hole and SMD components. </li>
+              <li>Proficient in soldering and hardware assembly, including both through-hole and SMD components.</li>
               <li>Experienced in using soldering stations and hot air rework stations for prototyping, repair, and
                 modification of custom PCBs.</li>
               <li>Skilled in fine-pitch soldering and BGA rework using microscope-guided techniques.</li>
               <li>Familiar with ESD-safe handling procedures and workspace setup.</li>
               <li>Capable of performing hands-on hardware debugging using multimeters and oscilloscopes after assembly
-                or rework. </li>
+                or
+                rework.</li>
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -304,15 +310,13 @@
   <section class="py-16" style="background-color: #4c99fc;">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-8 text-white">🧠 Soft Skills</h2>
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded-lg shadow-sm">
           <div class="flex items-center mb-3 space-x-3">
             <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
               <i class="ri-team-fill ri-lg text-primary"></i>
             </div>
-            <h4 class="text-gray-800 font-medium mb-0">
-              Team Collaboration
-            </h4>
+            <h4 class="text-gray-800 font-medium mb-0">Team Collaboration</h4>
           </div>
           <p class="text-gray-600 text-sm text-justify">
             • Strong team player with effective communication and collaboration skills.<br>
@@ -322,7 +326,8 @@
             development practices following the Scrum framework.<br>
             • Contributes actively to code reviews, technical discussions, and sprint planning.<br>
             • Skilled in planning and conducting cross-training sessions to share knowledge, align team capabilities,
-            and improve overall team performance.
+            and
+            improve overall team performance.
           </p>
         </div>
 
@@ -387,8 +392,8 @@
             • Quick to learn and adapt to new technologies, tools, and development environments. <br>
             • Comfortable working in fast-paced or evolving project scopes, with the ability to shift priorities and
             respond effectively to unexpected challenges. <br>
-            • Experienced in integrating new frameworks, hardware platforms, and workflows with
-            minimal ramp-up time, ensuring continuous productivity and contribution in dynamic team settings.
+            • Experienced in integrating new frameworks, hardware platforms, and workflows with minimal ramp-up time,
+            ensuring continuous productivity and contribution in dynamic team settings.
           </p>
         </div>
 
@@ -402,13 +407,12 @@
           <p class="text-gray-600 text-sm text-justify">
             • Committed to thoroughness and precision in all aspects of development work, from schematic design and code
             implementation to testing and documentation. <br>
-            • Skilled at identifying edge cases, preventing defects, and
-            ensuring accuracy in hardware layouts, firmware logic, and system integration. <br>
+            • Skilled at identifying edge cases, preventing defects, and ensuring accuracy in hardware layouts, firmware
+            logic, and system integration. <br>
             • Focused on maintaining high standards for quality, consistency, and reliability throughout the development
             lifecycle.
           </p>
         </div>
-
       </div>
     </div>
   </section>

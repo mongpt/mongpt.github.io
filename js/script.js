@@ -92,10 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+// Tab actions
 const tabs = document.querySelectorAll('.tab-button');
 const contents = document.querySelectorAll('.tab-content');
 let current = 0;
-let isHovered = false; // flag to pause auto-switching
+let isHovered = false; // Flag to pause auto-switching
 
 function showTab(index) {
   tabs.forEach((tab, i) => {
@@ -109,15 +111,23 @@ function showTab(index) {
   current = index;
 }
 
-// tab click event
+// Tab click event
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     const index = parseInt(tab.dataset.tab);
     showTab(index);
   });
+
+  // Hover detection on tab buttons
+  tab.addEventListener('mouseenter', () => {
+    isHovered = true;
+  });
+  tab.addEventListener('mouseleave', () => {
+    isHovered = false;
+  });
 });
 
-// hover detection on tab contents
+// Hover detection on tab contents
 contents.forEach(content => {
   content.addEventListener('mouseenter', () => {
     isHovered = true;
@@ -127,13 +137,28 @@ contents.forEach(content => {
   });
 });
 
-// auto-switch every 5s if not hovered
-setInterval(() => {
+// Auto-switch every 5s (3s on mobile < 640px) if not hovered
+function getInterval() {
+  return window.innerWidth < 640 ? 3000 : 5000; // 3s on mobile, 5s on desktop
+}
+
+let intervalId = setInterval(() => {
   if (!isHovered) {
     const next = (current + 1) % contents.length;
     showTab(next);
   }
-}, 5000);
+}, getInterval());
+
+// Update interval on resize
+window.addEventListener('resize', () => {
+  clearInterval(intervalId);
+  intervalId = setInterval(() => {
+    if (!isHovered) {
+      const next = (current + 1) % contents.length;
+      showTab(next);
+    }
+  }, getInterval());
+});
 
 // Show first tab initially
 showTab(0);
